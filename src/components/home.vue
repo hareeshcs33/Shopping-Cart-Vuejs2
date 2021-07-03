@@ -1,17 +1,32 @@
 <template>
   <b-container class="home">
     <h1>Home</h1>
-    
+    <div>{{name}}</div>
+    <cart-item :getData="getData"></cart-item>
   </b-container>
 </template>
 
 <script>
+import CartItem from '../shopping-cart/cart-item.vue';
+
 export default {
   name: 'home',
   data () {
     return {
+      name: 'hareesh'
     }
   },
+  components: {
+    CartItem,
+  },
+  computed: {
+    getData(){
+      return this.$store.state.data;
+    }
+  },
+  mounted(){
+    this.$store.commit("GET_DATA")
+  }
 }
 </script>
 
