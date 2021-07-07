@@ -2,6 +2,7 @@
   <b-container class="home">
     <h1>Home</h1>
     <div>{{name}}</div>
+    {{cartListLength}}
     <cart-item :getData="getData"></cart-item>
   </b-container>
 </template>
@@ -22,6 +23,9 @@ export default {
   computed: {
     getData(){
       return this.$store.state.data;
+    },
+    cartListLength(){
+      return this.$store.state.cartList.length;
     }
   },
   mounted(){

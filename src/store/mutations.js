@@ -4,17 +4,18 @@ export const GET_DATA = (state) => {
     state.data = data;
 }
 
-export const addToCart_status = (state, id) => {
-    return state.data.find(item => {
+export const add_to_cart = (state, id) => {
+    state.data.map(item => {
         if(item.id === id){
-            return item.cartItem = true;
+            item.cartItem = true;
         }
     })
 }
-export const removeFromCart_status = (state, id) => {
-    return state.data.find(item => {
+
+export const remove_from_cart = (state, id) => {
+    return state.data.map(item => {
         if(item.id === id){
-            return item.cartItem = false;
+            item.cartItem = false;
         }
     })
 }

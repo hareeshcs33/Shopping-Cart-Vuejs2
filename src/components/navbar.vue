@@ -4,9 +4,19 @@
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/about">About</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
+      <li><router-link to="/cart">Cart <span>({{cartLength}})</span></router-link></li>
     </ul>
   </div>
 </template>
+<script>
+export default {
+  computed: {
+    cartLength(){
+      return this.$store.getters.cartListLength;
+    }
+  }
+}
+</script>
 <style scoped>
 .navbar {
     margin: 10px 0;

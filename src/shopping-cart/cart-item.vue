@@ -29,11 +29,11 @@ export default {
     methods: {
         addToCart(id){
             this.cartItem = true;
-            this.$store.commit("addToCart_status", id);
+            this.$store.commit("add_to_cart", id);
         },
         removeFromCart(id){
             this.cartItem = false;
-            this.$store.commit("removeFromCart_status", id);
+            this.$store.commit("remove_from_cart", id);
         }
     },
     computed: {
