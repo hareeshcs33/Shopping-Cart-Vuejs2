@@ -5,17 +5,27 @@ export const GET_DATA = (state) => {
 }
 
 export const add_to_cart = (state, id) => {
-    state.data.map(item => {
+    const add_to_cart = state.data.map(item => {
         if(item.id === id){
             item.cartItem = true;
         }
+        return item;
     })
+    state = {
+        ...state,
+        data: [...add_to_cart]
+    }
 }
 
 export const remove_from_cart = (state, id) => {
-    return state.data.map(item => {
+    const remove_from_cart = state.data.map(item => {
         if(item.id === id){
             item.cartItem = false;
         }
-    })
+        return item;
+    });
+    state = {
+        ...state,
+        data: [...remove_from_cart]
+    }
 }
