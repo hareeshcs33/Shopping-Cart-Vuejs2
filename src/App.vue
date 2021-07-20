@@ -2,16 +2,19 @@
   <div id="app">
     <navbar></navbar>
     <router-view/>
+    <modal-root />
   </div>
 </template>
 
 <script>
 import Navbar from './components/navbar';
+import ModalRoot from './modules/modals/components/modal-root.vue';
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    ModalRoot
   }
 }
 </script>

@@ -2,7 +2,6 @@
   <b-container class="home">
     <h1>Home</h1>
     <div>{{name}}</div>
-    <modal-root />
     <button @click="addModal" class="btn btn-primary">Open Modal</button>
     <cart-item :getData="getData"></cart-item>
   </b-container>
@@ -10,7 +9,6 @@
 
 <script>
 import CartItem from '../shopping-cart/cart-item.vue';
-import ModalRoot from '../modules/modals/components/modal-root.vue';
 import ModalService from '../modules/modals/services/modal.service';
 import TestModal from './test-modal.vue';
 
@@ -23,7 +21,6 @@ export default {
   },
   components: {
     CartItem,
-    ModalRoot,
     TestModal
   },
   methods: {
